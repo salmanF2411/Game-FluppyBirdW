@@ -152,8 +152,12 @@ function startGame() {
   document.getElementById("mainMenu").classList.add("hidden");
   resizeCanvas();
 
-  // Tampilkan tombol JUMP saat game dimulai
-  document.getElementById("jumpBtnMobile").style.display = "block";
+  // Tampilkan tombol JUMP hanya jika di mobile (lebar layar <= 768px)
+  if (window.innerWidth <= 768) {
+    document.getElementById("jumpBtnMobile").style.display = "block";
+  } else {
+    document.getElementById("jumpBtnMobile").style.display = "none";
+  }
 
   gameActive = true;
   gameOver = false;
